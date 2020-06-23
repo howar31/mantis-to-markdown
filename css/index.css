@@ -19,3 +19,8 @@ textarea#output {
     height: 5vh;
     min-height: 35px;
 }
+
+#message {
+    color: red;
+    display: none;
+}
