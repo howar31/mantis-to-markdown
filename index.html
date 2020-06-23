@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Mantis to Markdown</title>
+    <meta name="description" content="Mantis to Markdown">
+    <meta name="author" content="Howar31">
+
+    <link rel="stylesheet" href="css/index.css?v=1.0">
+
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <textarea name="input" id="input" cols="20" rows="10"></textarea>
+    <div id="convertWrap">
+        <button id="convert">Convert</button>
+    </div>
+    <textarea name="output" id="output" cols="20" rows="10"></textarea>
+
+    <div id="instruction">
+        <h1>Usage</h1>
+        <ol>
+            <li>Export CSV from Mantis</li>
+            <img src="images/1_export_csv.png" />
+            <li>Copy CSV string and Paste it in Input box</li>
+            <img src="images/2_copy_csv.png" />
+            <li>Click Convert button</li>
+            <img src="images/3_convert.png" />
+            <li>Copy text from Output box and paste it in Trello checklist</li>
+            <img src="images/4_paste_to_trello.png" />
+            <li>Hit Enter and your formatted Mantis list will be added to Trello checklist</li>
+            <img src="images/5_finish.png" />
+        </ol>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- https://github.com/typeiii/jquery-csv -->
+    <script src="js/jquery-csv.js"></script>
+    <script src="js/index.js?v=1.0"></script>
+</body>
+</html>

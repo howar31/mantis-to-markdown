@@ -1,0 +1,21 @@
+body {
+    margin: 10px;
+}
+
+textarea {
+    width: 95vw;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+textarea#input {
+    height: 20vh;
+}
+textarea#output {
+    height: 60vh;
+}
+
+#convertWrap {
+    height: 5vh;
+    min-height: 35px;
+}
