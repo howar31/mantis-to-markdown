@@ -18,11 +18,21 @@ $('#convert').click(function() {
     }
 
     csvData.sort(function(a, b) {
-        var keyA = new Date(a.Id),
-            keyB = new Date(b.Id);
-        if (keyA < keyB) return 1;
-        if (keyA > keyB) return -1;
-        return 0;
+        var serverityScore = {
+            feature: 10,
+            trivial: 20,
+            text: 30,
+            tweak: 40,
+            minor: 50,
+            major: 60,
+            crash: 70,
+            block: 80,
+        };
+
+        if (a.Severity !== b.Severity) {
+            return serverityScore[b.Severity] - serverityScore[a.Severity];
+        }
+        return b.Id - a.Id;
     });
 
     csvData.forEach(row => {
