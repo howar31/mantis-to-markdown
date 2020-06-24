@@ -26,7 +26,7 @@ $('#convert').click(function() {
     });
 
     csvData.forEach(row => {
-        if ('Id' in row && 'Summary' in row && 'Priority' in row) {
+        if ('Id' in row && 'Summary' in row && 'Severity' in row) {
             if (row.Id === undefined) {
                 $('#message').text('Invalid Id data').show();
                 return;
@@ -35,16 +35,16 @@ $('#convert').click(function() {
                 $('#message').text('Invalid Summary data').show();
                 return;
             }
-            if (row.Priority === undefined) {
-                $('#message').text('Invalid Priority data').show();
+            if (row.Severity === undefined) {
+                $('#message').text('Invalid Severity data').show();
                 return;
             }
 
             var id = parseInt(row.Id, 10);
             var briefSummary = row.Summary.replace(/\[[^\]]*_v[^\]]*\] /g, "");
-            markdownData += `[[${id}][${row.Priority.charAt(0).toUpperCase() + row.Priority.slice(1)}] ${briefSummary}](https://benqhqmantis.benq.com/view.php?id=${id})\n`;
+            markdownData += `[[${id}][${row.Severity.charAt(0).toUpperCase() + row.Severity.slice(1)}] ${briefSummary}](https://benqhqmantis.benq.com/view.php?id=${id})\n`;
         } else {
-            $('#message').text('Must have keys: Id, Summary, Priority').show();
+            $('#message').text('Must have keys: Id, Summary, Severity').show();
         }
     });
 
